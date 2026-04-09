@@ -585,9 +585,10 @@ ul {
 .hero-description {
   color: var(--text-secondary);
   font-size: 1.125rem;
-  line-height: 1.8;
+  line-height: 1.6;
   margin-bottom: 2rem;
   max-width: 500px;
+  text-align: left;
 }
 
 .hero-buttons {
@@ -736,6 +737,7 @@ ul {
     margin-right: auto;
     font-size: 1rem;
     padding: 0 0.5rem;
+    text-align: center;
   }
 
   .hero-buttons {
@@ -763,6 +765,56 @@ ul {
 
   .hero-title {
     font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-tag {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .hero-image-container {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-image-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about-title {
+    font-size: 1.3rem;
+  }
+
+  .about-text {
+    font-size: 0.9rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
   }
 }
 
@@ -811,7 +863,7 @@ ul {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center center;
 }
 
 @media (max-width: 968px) {
@@ -821,7 +873,7 @@ ul {
   }
 
   .about-image-main img {
-    object-position: center top;
+    object-position: center 30%;
   }
 }
 
@@ -862,6 +914,14 @@ ul {
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 1.5rem;
+  }
 }
 
 .about-text {
@@ -902,10 +962,30 @@ ul {
   .about-content {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 2rem;
   }
 
   .about-stats {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .about {
+    padding: 4rem 0;
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 0.5rem;
   }
 }
 
