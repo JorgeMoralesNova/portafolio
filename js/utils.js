@@ -1,4 +1,63 @@
 const Utils = {
+  translations: {
+    es: {
+      inicio: 'Inicio',
+      sobreMi: 'Sobre Mí',
+      proyectos: 'Proyectos',
+      tecnologias: 'Tecnologías',
+      contacto: 'Contacto',
+      disponible: 'Disponible para proyectos',
+      verProyectos: 'Ver Proyectos',
+      contactar: 'Contactar',
+      scroll: 'Scroll',
+      conoceMiHistoria: 'Conoce mi historia',
+      passionate: 'Passionate about creating impactful solutions',
+      habilidades: 'Mis Habilidades',
+      avanzado: 'Avanzado',
+      intermedio: 'Intermedio',
+      enAprendizaje: 'En aprendizaje',
+      proyectosCompletados: 'Proyectos Completados',
+      clientesSatisfechos: 'Clientes Satisfechos',
+      anosExperiencia: 'Años de Experiencia',
+      tecnologiasDominadas: 'Tecnologías Dominadas',
+      hablemos: 'Hablemos',
+      tienesProyecto: '¿Tienes un proyecto en mente? Contáctame',
+      conversemos: '¡Conversemos!',
+      innovadoras: 'Estoy siempre abierto a nuevos proyectos, ideas innovadoras o simplemente para una buena conversación sobre tecnología.',
+      enviarMensaje: 'Enviar Mensaje',
+      copyright: 'Todos los derechos reservados.'
+    },
+    en: {
+      inicio: 'Home',
+      sobreMi: 'About Me',
+      proyectos: 'Projects',
+      tecnologias: 'Technologies',
+      contacto: 'Contact',
+      disponible: 'Available for projects',
+      verProyectos: 'View Projects',
+      contactar: 'Contact Me',
+      scroll: 'Scroll',
+      conoceMiHistoria: 'Know my story',
+      passionate: 'Passionate about creating impactful solutions',
+      habilidades: 'My Skills',
+      avanzado: 'Advanced',
+      intermedio: 'Intermediate',
+      enAprendizaje: 'Learning',
+      proyectosCompletados: 'Completed Projects',
+      clientesSatisfechos: 'Satisfied Clients',
+      anosExperiencia: 'Years of Experience',
+      tecnologiasDominadas: 'Technologies Mastered',
+      hablemos: "Let's Talk",
+      tienesProyecto: 'Have a project in mind? Contact me',
+      conversemos: "Let's Chat!",
+      innovadoras: "I'm always open to new projects, innovative ideas or just a good conversation about technology.",
+      enviarMensaje: 'Send Message',
+      copyright: 'All rights reserved.'
+    }
+  },
+
+  currentLang: 'es',
+
   debounce(func, wait = 100) {
     let timeout;
     return function executedFunction(...args) {
@@ -306,6 +365,51 @@ const Utils = {
         toggle.classList.remove('active');
         menu.classList.remove('active');
       });
+    });
+  },
+
+  initLangToggle() {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+
+    const savedLang = localStorage.getItem('lang') || 'es';
+    this.currentLang = savedLang;
+    this.applyLanguage(savedLang);
+    this.updateLangButton(savedLang);
+
+    btn.addEventListener('click', () => {
+      this.currentLang = this.currentLang === 'es' ? 'en' : 'es';
+      localStorage.setItem('lang', this.currentLang);
+      this.applyLanguage(this.currentLang);
+      this.updateLangButton(this.currentLang);
+    });
+  },
+
+  updateLangButton(lang) {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    const label = btn.querySelector('.lang-label');
+    if (label) {
+      label.textContent = lang.toUpperCase();
+    }
+  },
+
+  applyLanguage(lang) {
+    const t = this.translations[lang];
+    if (!t) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) {
+        el.textContent = t[key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (t[key]) {
+        el.placeholder = t[key];
+      }
     });
   }
 };

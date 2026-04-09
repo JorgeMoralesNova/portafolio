@@ -9,6 +9,7 @@ const App = {
   init() {
     this.hideLoader();
     Utils.initTheme();
+    Utils.initLangToggle();
     Utils.initCursor();
     Utils.initSmoothScroll();
     Utils.initScrollReveal();

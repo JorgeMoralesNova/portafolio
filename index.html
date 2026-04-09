@@ -65,6 +65,10 @@
     </span>
   </button>
 
+  <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma">
+    <span class="lang-label">ES</span>
+  </button>
+
   <header class="navbar" id="navbar">
     <nav class="nav-container">
       <a href="#" class="nav-logo">
@@ -73,11 +77,11 @@
       </a>
       
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="#inicio" class="nav-link active">Inicio</a></li>
-        <li><a href="#sobre-mi" class="nav-link">Sobre Mí</a></li>
-        <li><a href="#proyectos" class="nav-link">Proyectos</a></li>
-        <li><a href="#tecnologias" class="nav-link">Tecnologías</a></li>
-        <li><a href="#contacto" class="nav-link">Contacto</a></li>
+        <li><a href="#inicio" class="nav-link active" data-i18n="inicio">Inicio</a></li>
+        <li><a href="#sobre-mi" class="nav-link" data-i18n="sobreMi">Sobre Mí</a></li>
+        <li><a href="#proyectos" class="nav-link" data-i18n="proyectos">Proyectos</a></li>
+        <li><a href="#tecnologias" class="nav-link" data-i18n="tecnologias">Tecnologías</a></li>
+        <li><a href="#contacto" class="nav-link" data-i18n="contacto">Contacto</a></li>
       </ul>
       
       <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
@@ -96,7 +100,7 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Disponible para proyectos
+          <span data-i18n="disponible">Disponible para proyectos</span>
         </div>
         
         <h1 class="hero-title">
@@ -120,16 +124,16 @@
         
         <div class="hero-buttons">
           <a href="#proyectos" class="btn btn-primary">
-            Ver Proyectos
+            <span data-i18n="verProyectos">Ver Proyectos</span>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
-          <a href="#contacto" class="btn btn-secondary">Contactar</a>
+          <a href="#contacto" class="btn btn-secondary" data-i18n="contactar">Contactar</a>
         </div>
         
         <div class="hero-scroll">
-          <span>Scroll</span>
+          <span data-i18n="scroll">Scroll</span>
           <div class="scroll-indicator">
             <div class="scroll-dot"></div>
           </div>
@@ -149,9 +153,9 @@
     <section class="about" id="sobre-mi">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-badge">Sobre Mí</span>
-          <h2 class="section-title">Conoce mi historia</h2>
-          <p class="section-subtitle">Passionate about creating impactful solutions</p>
+          <span class="section-badge" data-i18n="sobreMi">Sobre Mí</span>
+          <h2 class="section-title" data-i18n="conoceMiHistoria">Conoce mi historia</h2>
+          <p class="section-subtitle" data-i18n="passionate">Passionate about creating impactful solutions</p>
         </div>
         
         <div class="about-content">
@@ -214,61 +218,61 @@
         </div>
         
         <div class="skills-section reveal">
-          <h3 class="skills-title">Mis Habilidades</h3>
+          <h3 class="skills-title" data-i18n="habilidades">Mis Habilidades</h3>
           <div class="skills-grid">
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Java / Spring Boot (JPA, Security, REST)</span>
-                <span class="skill-level">Avanzado</span>
+                <span class="skill-level" data-i18n="avanzado">Avanzado</span>
               </div>
               <p class="skill-project">Sky T, Master Bread, Orbital</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Python</span>
-                <span class="skill-level">Intermedio</span>
+                <span class="skill-level" data-i18n="intermedio">Intermedio</span>
               </div>
               <p class="skill-project">Automatizaciones, Chatbots IA</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">JavaScript / TypeScript</span>
-                <span class="skill-level">Intermedio</span>
+                <span class="skill-level" data-i18n="intermedio">Intermedio</span>
               </div>
               <p class="skill-project">Frontend en proyectos varios</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Docker / Git / Despliegue Cloud</span>
-                <span class="skill-level">Intermedio</span>
+                <span class="skill-level" data-i18n="intermedio">Intermedio</span>
               </div>
               <p class="skill-project">Despliegue de proyectos en producción</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">MySQL</span>
-                <span class="skill-level">Intermedio</span>
+                <span class="skill-level" data-i18n="intermedio">Intermedio</span>
               </div>
               <p class="skill-project">Bases de datos en proyectos reales</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Rust</span>
-                <span class="skill-level">En aprendizaje</span>
+                <span class="skill-level" data-i18n="enAprendizaje">En aprendizaje</span>
               </div>
               <p class="skill-project">Proyectos personales</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Svelte / Tauri</span>
-                <span class="skill-level">En aprendizaje</span>
+                <span class="skill-level" data-i18n="enAprendizaje">En aprendizaje</span>
               </div>
               <p class="skill-project">Explorando frameworks</p>
             </div>
             <div class="skill-item">
               <div class="skill-header">
                 <span class="skill-name">Astro</span>
-                <span class="skill-level">En aprendizaje</span>
+                <span class="skill-level" data-i18n="enAprendizaje">En aprendizaje</span>
               </div>
               <p class="skill-project">Explorando frameworks</p>
             </div>
@@ -280,7 +284,7 @@
     <section class="projects" id="proyectos">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-badge">Proyectos</span>
+          <span class="section-badge" data-i18n="proyectos">Proyectos</span>
           <h2 class="section-title">Trabajo Destacado</h2>
           <p class="section-subtitle">Soluciones que he construido para clientes reales</p>
         </div>
@@ -311,7 +315,7 @@
     <section class="technologies" id="tecnologias">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-badge">Tecnologías</span>
+          <span class="section-badge" data-i18n="tecnologias">Tecnologías</span>
           <h2 class="section-title">Stack Tecnológico</h2>
           <p class="section-subtitle">Herramientas que domino para crear soluciones completas</p>
         </div>
@@ -329,15 +333,15 @@
     <section class="contact" id="contacto">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-badge">Contacto</span>
-          <h2 class="section-title">Hablemos</h2>
-          <p class="section-subtitle">¿Tienes un proyecto en mente? Contáctame</p>
+          <span class="section-badge" data-i18n="contacto">Contacto</span>
+          <h2 class="section-title" data-i18n="hablemos">Hablemos</h2>
+          <p class="section-subtitle" data-i18n="tienesProyecto">¿Tienes un proyecto en mente? Contáctame</p>
         </div>
         
         <div class="contact-content">
           <div class="contact-info reveal-left">
-            <h3>¡Conversemos!</h3>
-            <p>
+            <h3 data-i18n="conversemos">¡Conversemos!</h3>
+            <p data-i18n="innovadoras">
               Estoy siempre abierto a nuevos proyectos, ideas innovadoras 
               o simplemente para una buena conversación sobre tecnología.
             </p>
