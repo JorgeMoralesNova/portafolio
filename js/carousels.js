@@ -1,4 +1,4 @@
-const WHATSAPP_NUMBER = '573105148841';
+const WHATSAPP_NUMBER = '573105148847';
 
 const createWhatsAppLink = (projectName) => {
   const message = encodeURIComponent(`Hola Jorge! Me interesa el proyecto "${projectName}". ¿Podemos agendar una demo?`);
