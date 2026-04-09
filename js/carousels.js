@@ -177,7 +177,11 @@ const Carousels = {
     let currentIndex = 0;
     const cards = track.querySelectorAll('.project-card');
     const totalCards = cards.length;
-    const visibleCards = window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 3;
+    // 1 card per view on mobile (<768px), 2 on tablet (768-968px)
+    const visibleCards = window.innerWidth < 768 ? 1 : 2;
+
+    // Set exact card widths based on the container's actual rendered width
+    this.resizeCarouselCards(track, visibleCards);
 
     this.createDots(dotsContainer, totalCards, visibleCards);
     this.updateCarousel(track, currentIndex, cards);
@@ -216,11 +220,23 @@ const Carousels = {
     }, { passive: true });
 
     window.addEventListener('resize', Utils.debounce(() => {
-      const newVisibleCards = window.innerWidth < 480 ? 1 : window.innerWidth < 768 ? 2 : 3;
+      const newVisibleCards = window.innerWidth < 768 ? 1 : 2;
       if (newVisibleCards !== visibleCards) {
         location.reload();
       }
     }, 250));
+  },
+
+  resizeCarouselCards(track, visibleCards) {
+    const container = track.closest('.carousel-container');
+    if (!container) return;
+    const containerWidth = container.offsetWidth;
+    const cardWidth = Math.floor(containerWidth / visibleCards);
+    track.querySelectorAll('.carousel-card').forEach(card => {
+      card.style.width = cardWidth + 'px';
+      card.style.minWidth = cardWidth + 'px';
+      card.style.maxWidth = cardWidth + 'px';
+    });
   },
 
   renderProjects(container, type) {
@@ -269,11 +285,6 @@ const Carousels = {
         </div>
       `;
 
-      if (type === 'carousel') {
-        card.style.minWidth = 'calc(100% - 2rem)';
-        card.style.maxWidth = '400px';
-      }
-
       container.appendChild(card);
     });
   },
@@ -305,7 +316,7 @@ const Carousels = {
   },
 
   updateCarousel(track, currentIndex, cards) {
-    const cardWidth = cards[0].offsetWidth + 32;
+    const cardWidth = cards[0].offsetWidth;
     track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
   },
 
