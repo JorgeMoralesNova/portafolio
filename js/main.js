@@ -122,14 +122,10 @@ const App = {
 
       try {
         const formData = new FormData(form);
-        formData.append('form-name', 'contact-form');
-        const response = await fetch('/', {
+        const response = await fetch('https://formspree.io/f/mreovnnr', {
           method: 'POST',
-          headers: { 
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'X-Netlify-Form': 'true'
-          },
-          body: new URLSearchParams(formData).toString()
+          body: formData,
+          headers: { 'Accept': 'application/json' }
         });
 
         if (response.ok) {
@@ -145,7 +141,7 @@ const App = {
       } catch (error) {
         const status = document.getElementById('form-status');
         if (status) {
-          status.textContent = 'Error al enviar el mensaje.';
+          status.textContent = 'Error al enviar. Intenta de nuevo.';
           status.className = 'form-status error';
         }
       } finally {
