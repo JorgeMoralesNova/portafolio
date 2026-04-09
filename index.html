@@ -446,37 +446,20 @@
           </div>
           
           <div class="contact-form-wrapper reveal-right">
-            <form id="contact-form" name="contact-form" action="/" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+            <form id="contact-form" name="contact-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
               <input type="hidden" name="form-name" value="contact-form">
-              <p style="display: none;">
-                <label>No completar: <input name="bot-field"></label>
-              </p>
-              
+              <input type="hidden" name="bot-field">
               <div class="form-group">
-                <label class="form-label" for="name">Nombre</label>
-                <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
-                <span class="form-error">Por favor ingresa tu nombre</span>
+                <input type="text" name="name" id="name" class="form-input" placeholder="Nombre" required>
               </div>
-              
               <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="tu@email.com" required>
-                <span class="form-error">Por favor ingresa un email válido</span>
+                <input type="email" name="email" id="email" class="form-input" placeholder="Email" required>
               </div>
-              
               <div class="form-group">
-                <label class="form-label" for="message">Mensaje</label>
-                <textarea id="message" name="message" class="form-textarea" placeholder="¿En qué puedo ayudarte?" required></textarea>
-                <span class="form-error">Por favor ingresa tu mensaje</span>
+                <textarea name="message" id="message" class="form-textarea" placeholder="Mensaje" required></textarea>
               </div>
-              
-              <button type="submit" class="btn btn-primary form-submit">
-                Enviar Mensaje
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <line x1="22" y1="2" x2="11" y2="13"/>
-                  <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-                </svg>
-              </button>
+              <button type="submit" class="form-submit">Enviar Mensaje</button>
+              <div id="form-status" class="form-status"></div>
             </form>
           </div>
         </div>

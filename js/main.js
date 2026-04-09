@@ -122,20 +122,32 @@ const App = {
 
       try {
         const formData = new FormData(form);
+        formData.append('form-name', 'contact-form');
         const response = await fetch('/', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          headers: { 
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-Netlify-Form': 'true'
+          },
           body: new URLSearchParams(formData).toString()
         });
 
         if (response.ok) {
-          Utils.showToast('Mensaje enviado correctamente');
+          const status = document.getElementById('form-status');
+          if (status) {
+            status.textContent = '¡Mensaje enviado! Te responderé pronto.';
+            status.className = 'form-status success';
+          }
           form.reset();
         } else {
           throw new Error('Error en el envío');
         }
       } catch (error) {
-        Utils.showToast('Error al enviar el mensaje');
+        const status = document.getElementById('form-status');
+        if (status) {
+          status.textContent = 'Error al enviar el mensaje.';
+          status.className = 'form-status error';
+        }
       } finally {
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
