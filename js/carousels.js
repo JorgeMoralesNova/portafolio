@@ -14,7 +14,7 @@ const Carousels = {
       category: 'Gestión',
       description: 'Sistema integral de gestión de parque automotor y disponibilidad de máquinas. Control total de flota, mantenimiento preventivo y seguimiento GPS en tiempo real.',
       image: 'assets/images/sky-t.png',
-      tags: ['Spring Boot', 'Java', 'React', 'PostgreSQL', 'GPS'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -24,7 +24,7 @@ const Carousels = {
       category: 'Retail',
       description: 'Plataforma completa para gestión de panaderías y múltiples puntos de venta. Inventario automático, ventas y reportes en tiempo real.',
       image: 'assets/images/master bread.png',
-      tags: ['Spring Boot', 'React', 'MySQL', 'Docker'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -34,7 +34,7 @@ const Carousels = {
       category: 'E-commerce',
       description: 'Sistema todo-en-uno para inventario, ventas, e-commerce y gestión de gastos del hogar o negocio. Automatización completa.',
       image: 'assets/images/orbital.png',
-      tags: ['Spring Boot', 'Angular', 'PostgreSQL', 'REST API'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -44,7 +44,7 @@ const Carousels = {
       category: 'Industrial',
       description: 'Solución especializada para manejo de bodega y EPP (Elementos de Protección Personal). Control de inventario industrial con código QR.',
       image: 'assets/images/orbital industrial.png',
-      tags: ['Spring Boot', 'React', 'PostgreSQL', 'QR Scanner'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -54,7 +54,7 @@ const Carousels = {
       category: 'Food Tech',
       description: 'Sistema de gestión integral para negocios de comida rápida. Pedidos, inventario, delivery y análisis de ventas.',
       image: 'assets/images/mrdeleite(comidas rapidas).png',
-      tags: ['Spring Boot', 'Vue.js', 'MySQL', 'Flutter'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -64,7 +64,7 @@ const Carousels = {
       category: 'Automatización',
       description: 'Suite de automatización de oficina: correos automáticos, seguimiento de tareas, asistente de voz e IA en chatbots.',
       image: 'assets/images/seven+.png',
-      tags: ['Python', 'Claude API', 'WebSocket', 'Docker'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -74,7 +74,7 @@ const Carousels = {
       category: 'IA / NLP',
       description: 'CRM inteligente con chatbot integrado y procesamiento de lenguaje natural. Automatización de atención al cliente con LLMs.',
       image: 'assets/images/pagina web con chatbot integrado a plataforma educativa yoaprendotec.skyonedev.com  .png',
-      tags: ['Python', 'Claude API', 'MongoDB', 'Docker'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -84,7 +84,7 @@ const Carousels = {
       category: 'IoT',
       description: 'Plataforma de seguimiento vehicular con dispositivos Sinotrack. Monitoreo en tiempo real, rutas y alertas personalizadas.',
       image: 'assets/images/skygps.png',
-      tags: ['Spring Boot', 'JavaScript', 'MQTT', 'Maps API', 'Docker'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -94,7 +94,7 @@ const Carousels = {
       category: 'Seguridad',
       description: 'Sistema GPS especializado para vigilancia y seguimiento de activos. Geofencing y alertas de movimiento.',
       image: 'assets/images/ares.png',
-      tags: ['Spring Boot', 'React Native', 'PostgreSQL', 'AWS'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -104,7 +104,7 @@ const Carousels = {
       category: 'CRM',
       description: 'Gestión completa de embudo de ventas, cobros y cotizaciones. Pipeline visual y automatización comercial.',
       image: 'assets/images/crmsky.png',
-      tags: ['Spring Boot', 'React', 'MongoDB', 'WebSocket'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -114,7 +114,7 @@ const Carousels = {
       category: 'EdTech',
       description: 'Plataforma estilo Moodle con chatbot para matrículas. Contenido dinámico, evaluaciones y seguimiento de estudiantes.',
       image: 'assets/images/plataforma educativa  yoaprendo.skyonedev.com.png',
-      tags: ['Spring Boot', 'Thymeleaf', 'MySQL', 'Chatbot IA'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -124,7 +124,7 @@ const Carousels = {
       category: 'EdTech',
       description: 'Plataforma especializada en contenido de inglés. Clases interactivas, ejercicios con IA y seguimiento de progreso.',
       image: 'assets/images/software con contenido de ingles escuela.frienlyen.com .png',
-      tags: ['Astro', 'Svelte', 'Supabase', 'Claude API'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -134,7 +134,7 @@ const Carousels = {
       category: 'E-commerce',
       description: 'Tienda en línea de abarrotes con sincronización automática de inventario, precios e imágenes desde el sistema Orbital. Gestión completa de pedidos y delivery.',
       image: 'assets/images/ecommerce thalipuchi.com.png',
-      tags: ['Spring Boot', 'Astro', 'Svelte', 'Orbital API', 'Tauri'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       github: 'https://github.com/JorgeMoralesNova'
     },
     {
@@ -144,7 +144,7 @@ const Carousels = {
       category: 'Web',
       description: 'Plataforma web para práctica de inglés con contenido interactivo, ejercicios y seguimiento de progreso. Interfaz moderna y amigable.',
       image: 'assets/images/friendlyen.com ejemplo pagina cliente.png',
-      tags: ['Astro', 'Svelte', 'Supabase', 'IA'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       demo: 'https://friendlyen.com',
       github: 'https://github.com/JorgeMoralesNova'
     },
@@ -155,7 +155,7 @@ const Carousels = {
       category: 'Logística',
       description: 'Sistema de gestión logística para empresas. Optimización de rutas, seguimiento de envíos, control de inventario y análisis de operaciones en tiempo real.',
       image: 'assets/images/ejemplo software de logistica optilogix.png',
-      tags: ['Spring Boot', 'React', 'PostgreSQL', 'Maps API'],
+      tags: ['Java', 'HTML', 'CSS', 'JS', 'Thymeleaf', 'Spring Security', 'Spring Boot', 'Python', 'Docker'],
       demo: '#',
       github: 'https://github.com/JorgeMoralesNova',
       badge: 'Beta'
