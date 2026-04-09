@@ -131,7 +131,7 @@ const Utils = {
       if (progress < 1) {
         requestAnimationFrame(update);
       } else {
-        element.textContent = target;
+        element.textContent = target >= 10 ? `${target}+` : target;
       }
     };
 
