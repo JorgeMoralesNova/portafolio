@@ -174,6 +174,10 @@ const Carousels = {
     this.renderProjects(track, 'carousel');
     this.renderProjects(grid, 'grid');
 
+    document.addEventListener('langChange', () => {
+      Utils.applyLanguage(Utils.currentLang);
+    });
+
     let currentIndex = 0;
     const cards = track.querySelectorAll('.project-card');
     const totalCards = cards.length;
