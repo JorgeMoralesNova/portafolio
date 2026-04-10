@@ -1,10 +1,16 @@
 const App = {
-  typingTexts: [
-    'Ingeniero de Software',
-    'Ingeniero de Protocolos',
-    'Creador de Soluciones',
-    'Desarrollador Full Stack'
-  ],
+  typingTexts: {
+    es: [
+      'Ingeniero de Sistemas',
+      'Creador de Soluciones',
+      'Desarrollador Full Stack'
+    ],
+    en: [
+      'Systems Engineer',
+      'Solution Creator',
+      'Full Stack Developer'
+    ]
+  },
 
   init() {
     this.hideLoader();
@@ -52,8 +58,11 @@ const App = {
     let isDeleting = false;
     let typeSpeed = 100;
 
+    const getTexts = () => Utils.currentLang === 'en' ? this.typingTexts.en : this.typingTexts.es;
+
     const type = () => {
-      const currentText = this.typingTexts[textIndex];
+      const texts = getTexts();
+      const currentText = texts[textIndex];
 
       if (isDeleting) {
         typingElement.textContent = currentText.substring(0, charIndex - 1);
@@ -70,7 +79,7 @@ const App = {
         typeSpeed = 2000;
       } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        textIndex = (textIndex + 1) % this.typingTexts.length;
+        textIndex = (textIndex + 1) % texts.length;
         typeSpeed = 500;
       }
 
@@ -78,6 +87,12 @@ const App = {
     };
 
     type();
+
+    document.addEventListener('langChange', () => {
+      textIndex = 0;
+      charIndex = 0;
+      isDeleting = false;
+    });
   },
 
   initContactForm() {

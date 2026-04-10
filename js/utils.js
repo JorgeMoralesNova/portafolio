@@ -44,7 +44,13 @@ const Utils = {
       despleigueProyectos: 'Despliegue de proyectos en producción',
       basesDatos: 'Bases de datos en proyectos reales',
       proyectosPersonales: 'Proyectos personales',
-      explorandoFrameworks: 'Explorando frameworks'
+      explorandoFrameworks: 'Explorando frameworks',
+      iaAutomatizacion: 'IA & Automatización',
+      anos21: '21 años',
+      heroDescripcion: 'Experto combinando IA y programación. Desarrollo soluciones con Spring Boot, automatizo flujos con LLMs (Claude, GPT) y creo chatbots inteligentes conectados a CRM y plataformas educativas.',
+      solicitarDemo: 'Solicitar Demo',
+      visitar: 'Visitar',
+      github: 'GitHub'
     },
     en: {
       inicio: 'Home',
@@ -90,7 +96,13 @@ const Utils = {
       despleigueProyectos: 'Project deployment in production',
       basesDatos: 'Databases in real projects',
       proyectosPersonales: 'Personal projects',
-      explorandoFrameworks: 'Exploring frameworks'
+      explorandoFrameworks: 'Exploring frameworks',
+      iaAutomatizacion: 'AI & Automation',
+      anos21: '21 years old',
+      heroDescripcion: 'Expert combining AI and programming. I develop solutions with Spring Boot, automate workflows with LLMs (Claude, GPT) and create intelligent chatbots connected to CRM and educational platforms.',
+      solicitarDemo: 'Request Demo',
+      visitar: 'Visit',
+      github: 'GitHub'
     }
   },
 
@@ -420,6 +432,7 @@ const Utils = {
       localStorage.setItem('lang', this.currentLang);
       this.applyLanguage(this.currentLang);
       this.updateLangButton(this.currentLang);
+      document.dispatchEvent(new CustomEvent('langChange'));
     });
   },
 
