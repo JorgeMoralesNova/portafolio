@@ -12,6 +12,7 @@ const Utils = {
       scroll: 'Scroll',
       conoceMiHistoria: 'Conoce mi historia',
       passionate: 'Passionate about creating impactful solutions',
+      sobreMiSubtitulo: 'Apasionado por crear soluciones con impacto real',
       habilidades: 'Mis Habilidades',
       avanzado: 'Avanzado',
       intermedio: 'Intermedio',
@@ -31,7 +32,7 @@ const Utils = {
       stackTecnologico: 'Stack Tecnológico',
       herramientasDomino: 'Herramientas que domino para crear soluciones completas',
       sobreMiTitulo: 'Ingeniero de Sistemas & IA',
-      sobreMiParrafo1: 'Con 21 años, actualmente cursando 8vo semestre de Ingeniería de Sistemas, he desarrollado más de 12 proyectos completos combinando desarrollo backend con Spring Boot, automatización con IA y soluciones de vanguardia. Mi punto fuerte es Java/Spring Boot, pero domino igual de bien Python, JavaScript/TypeScript y Rust.',
+      sobreMiParrafo1: 'Con 21 años, actualmente cursando 9no semestre de Ingeniería de Sistemas, he desarrollado más de 15 proyectos completos combinando desarrollo backend con Spring Boot, automatización con IA y soluciones de vanguardia. Mi punto fuerte es Java/Spring Boot, pero domino igual de bien Python, JavaScript/TypeScript y Rust.',
       sobreMiParrafo2: 'Experto combinando IA y programación. Manejo avanzado de LLMs (OpenAI, Claude), implementación de MCP (Model Context Protocol), y desarrollo de chatbots inteligentes conectados a CRM y plataformas educativas. Automatizo flujos de trabajo con herramientas de IA como Claude Code.',
       filosofia: 'Creo que la tecnología debe simplificar la vida real. Por eso me especializo en automatizar procesos aburridos para que las personas puedan enfocarse en lo que realmente importa.',
       proyectosLabel: 'Proyectos',
@@ -64,6 +65,7 @@ const Utils = {
       scroll: 'Scroll',
       conoceMiHistoria: 'Know my story',
       passionate: 'Passionate about creating impactful solutions',
+      sobreMiSubtitulo: 'Passionate about creating impactful solutions',
       habilidades: 'My Skills',
       avanzado: 'Advanced',
       intermedio: 'Intermediate',
@@ -83,7 +85,7 @@ const Utils = {
       stackTecnologico: 'Tech Stack',
       herramientasDomino: 'Tools I master to create complete solutions',
       sobreMiTitulo: 'Systems Engineer & AI',
-      sobreMiParrafo1: 'At 21 years old, currently in my 8th semester of Systems Engineering, I have developed more than 12 complete projects combining backend development with Spring Boot, AI automation and cutting-edge solutions. My strength is Java/Spring Boot, but I also handle Python, JavaScript/TypeScript and Rust.',
+      sobreMiParrafo1: 'At 21 years old, currently in my 9th semester of Systems Engineering, I have developed more than 15 complete projects combining backend development with Spring Boot, AI automation and cutting-edge solutions. My strength is Java/Spring Boot, but I also handle Python, JavaScript/TypeScript and Rust.',
       sobreMiParrafo2: 'Expert combining AI and programming. Advanced handling of LLMs (OpenAI, Claude), MCP (Model Context Protocol) implementation, and intelligent chatbots connected to CRM and educational platforms. I automate workflows with AI tools like Claude Code.',
       filosofia: 'I believe technology should simplify real life. That is why I specialize in automating boring processes so people can focus on what really matters.',
       proyectosLabel: 'Projects',
@@ -363,6 +365,14 @@ const Utils = {
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
     reveals.forEach(el => observer.observe(el));
+
+    setTimeout(() => {
+      document.querySelectorAll('.reveal:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible)')
+        .forEach(el => {
+          const r = el.getBoundingClientRect();
+          if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('visible');
+        });
+    }, 300);
   },
 
   initNavbar() {

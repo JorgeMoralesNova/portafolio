@@ -13,6 +13,8 @@ const App = {
   },
 
   init() {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     this.hideLoader();
     Utils.initTheme();
     Utils.initLangToggle();
@@ -22,13 +24,17 @@ const App = {
     Utils.initNavbar();
     Utils.initBackToTop();
     Utils.initMobileNav();
-    this.initParticles();
+    if (!reducedMotion) {
+      this.initParticles();
+    }
     this.initTypingEffect();
     Carousels.initProjectsCarousel();
     Carousels.initTechMarquee();
     Carousels.initStatsAnimation();
     this.initContactForm();
-    Utils.initTiltEffect();
+    if (!reducedMotion) {
+      Utils.initTiltEffect();
+    }
     this.setCurrentYear();
     this.setActiveNavLink();
   },
