@@ -1,254 +1,135 @@
-const App = {
-  typingTexts: {
-    es: [
-      'Ingeniero de Sistemas',
-      'Creador de Soluciones',
-      'Desarrollador Full Stack'
-    ],
-    en: [
-      'Systems Engineer',
-      'Solution Creator',
-      'Full Stack Developer'
-    ]
-  },
+// Arranque del portafolio. Cada módulo se inicia aislado: si uno falla, el resto sigue.
+import { t, tx, getLang, setLang, applyI18n } from './i18n.js';
+import { PROJECTS, FEATURED, ARCHIVE, SECTORS, waLink } from './data/projects.js';
+import { initHero } from './modules/hero.js';
+import { initCases } from './modules/cases.js';
+import { initStack } from './modules/stack.js';
+import { initLightbox } from './modules/lightbox.js';
+import { initArchive } from './modules/archive.js';
+import { initContact } from './modules/contact.js';
+import { initTerminal } from './modules/terminal.js';
 
-  init() {
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    this.hideLoader();
-    Utils.initTheme();
-    Utils.initLangToggle();
-    Utils.initCursor();
-    Utils.initSmoothScroll();
-    Utils.initScrollReveal();
-    Utils.initNavbar();
-    Utils.initBackToTop();
-    Utils.initMobileNav();
-    if (!reducedMotion) {
-      this.initParticles();
-    }
-    this.initTypingEffect();
-    Carousels.initProjectsCarousel();
-    Carousels.initTechMarquee();
-    Carousels.initStatsAnimation();
-    this.initContactForm();
-    if (!reducedMotion) {
-      Utils.initTiltEffect();
-    }
-    this.setCurrentYear();
-    this.setActiveNavLink();
-  },
-
-  hideLoader() {
-    const loader = document.getElementById('loader');
-    window.addEventListener('load', () => {
-      setTimeout(() => {
-        loader.classList.add('hidden');
-      }, 500);
-    });
-  },
-
-  initParticles() {
-    const container = document.getElementById('particles');
-    if (container) {
-      Utils.createParticles(container, 30);
-    }
-  },
-
-  initTypingEffect() {
-    const typingElement = document.getElementById('typing-text');
-    if (!typingElement) return;
-
-    let textIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100;
-
-    const getTexts = () => Utils.currentLang === 'en' ? this.typingTexts.en : this.typingTexts.es;
-
-    const type = () => {
-      const texts = getTexts();
-      const currentText = texts[textIndex];
-
-      if (isDeleting) {
-        typingElement.textContent = currentText.substring(0, charIndex - 1);
-        charIndex--;
-        typeSpeed = 50;
-      } else {
-        typingElement.textContent = currentText.substring(0, charIndex + 1);
-        charIndex++;
-        typeSpeed = 100;
-      }
-
-      if (!isDeleting && charIndex === currentText.length) {
-        isDeleting = true;
-        typeSpeed = 2000;
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        textIndex = (textIndex + 1) % texts.length;
-        typeSpeed = 500;
-      }
-
-      setTimeout(type, typeSpeed);
-    };
-
-    type();
-
-    document.addEventListener('langChange', () => {
-      textIndex = 0;
-      charIndex = 0;
-      isDeleting = false;
-    });
-  },
-
-  initContactForm() {
-    const form = document.getElementById('contact-form');
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const name = form.querySelector('#name');
-      const email = form.querySelector('#email');
-      const message = form.querySelector('#message');
-
-      let isValid = true;
-
-      if (!name.value.trim()) {
-        name.classList.add('error');
-        isValid = false;
-      } else {
-        name.classList.remove('error');
-      }
-
-      if (!Utils.validateEmail(email.value)) {
-        email.classList.add('error');
-        isValid = false;
-      } else {
-        email.classList.remove('error');
-      }
-
-      if (!message.value.trim()) {
-        message.classList.add('error');
-        isValid = false;
-      } else {
-        message.classList.remove('error');
-      }
-
-      if (!isValid) return;
-
-      const submitBtn = form.querySelector('.form-submit');
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Enviando...';
-      submitBtn.disabled = true;
-
-      try {
-        const formData = new FormData(form);
-        const response = await fetch('https://formspree.io/f/mreovnnr', {
-          method: 'POST',
-          body: formData,
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          const status = document.getElementById('form-status');
-          if (status) {
-            status.textContent = '¡Mensaje enviado! Te responderé pronto.';
-            status.className = 'form-status success';
-          }
-          form.reset();
-        } else {
-          throw new Error('Error en el envío');
-        }
-      } catch (error) {
-        const status = document.getElementById('form-status');
-        if (status) {
-          status.textContent = 'Error al enviar. Intenta de nuevo.';
-          status.className = 'form-status error';
-        }
-      } finally {
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    });
-
-    const inputs = form.querySelectorAll('.form-input, .form-textarea');
-    inputs.forEach(input => {
-      input.addEventListener('input', () => {
-        input.classList.remove('error');
-      });
-    });
-  },
-
-  setCurrentYear() {
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  },
-
-  setActiveNavLink() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute('id');
-          navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
-      });
-    }, { threshold: 0.3 });
-
-    sections.forEach(section => observer.observe(section));
-  }
+const $ = (s) => document.querySelector(s);
+const safe = (name, fn) => {
+  try { return fn(); } catch (err) { console.error(`[${name}]`, err); return undefined; }
 };
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-document.addEventListener('DOMContentLoaded', () => {
-  App.init();
-});
-
-if ('IntersectionObserver' in window) {
-  const skillObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        Utils.animateProgressBars();
-        skillObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  const skillsSection = document.querySelector('.skills-section');
-  if (skillsSection) {
-    skillObserver.observe(skillsSection);
-  }
+// ---------- Idioma y tema ----------
+function initLang() {
+  const btn = $('#langToggle');
+  const paint = () => { btn.querySelector('.lang-cur').textContent = getLang().toUpperCase(); };
+  applyI18n();
+  paint();
+  btn.addEventListener('click', () => {
+    setLang(getLang() === 'es' ? 'en' : 'es');
+    paint();
+  });
 }
 
-Utils.initTiltEffect = function() {
-  const cards = document.querySelectorAll('.project-card');
-
-  cards.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
-
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
+function initTheme() {
+  const root = document.documentElement;
+  const meta = document.querySelector('meta[name="theme-color"]');
+  const sync = () => { if (meta) meta.content = root.dataset.theme === 'light' ? '#F6F5F1' : '#0B0D12'; };
+  sync();
+  $('#themeToggle').addEventListener('click', () => {
+    root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    try { localStorage.setItem('jm-theme', root.dataset.theme); } catch (e) { /* sin almacenamiento */ }
+    sync();
   });
+}
+
+// ---------- Cabecera, menú y scroll-spy ----------
+function initHeader() {
+  const header = $('#siteHeader');
+  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 16);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  const btn = $('#menuToggle');
+  const menu = $('#mobileMenu');
+  const setOpen = (open) => {
+    btn.setAttribute('aria-expanded', String(open));
+    menu.hidden = !open;
+    header.classList.toggle('is-scrolled', open || window.scrollY > 16);
+  };
+  btn.addEventListener('click', () => setOpen(menu.hidden));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) setOpen(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); } });
+  matchMedia('(min-width: 900px)').addEventListener('change', (e) => { if (e.matches) setOpen(false); });
+
+  // Scroll-spy: la sección que cruza la franja superior de la pantalla
+  const links = [...document.querySelectorAll('.nav-links a[data-spy]')];
+  const alias = { archivo: 'trabajo', ia: 'stack' };
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (!en.isIntersecting) return;
+      const id = alias[en.target.id] || en.target.id;
+      links.forEach((a) => a.classList.toggle('is-active', a.dataset.spy === id));
+    });
+  }, { rootMargin: '-35% 0px -60% 0px' });
+  document.querySelectorAll('main > section[id]').forEach((s) => io.observe(s));
+}
+
+// ---------- Revelado al hacer scroll ----------
+const revealIO = !reduced && 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+    entries.forEach((en) => {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); revealIO.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 })
+  : null;
+
+function reveal(scope = document) {
+  const els = scope.querySelectorAll('[data-reveal]:not(.is-in)');
+  if (!revealIO) { els.forEach((el) => el.classList.add('is-in')); return; }
+  els.forEach((el) => revealIO.observe(el));
+}
+
+function markReveal() {
+  document.querySelectorAll('.sec-head, .proof, .tl-item, .term, .ai-card, .about-photo, .about-text > p, .about-quote, .about-facts, .contact-links, .contact-form, .filters, .archive')
+    .forEach((el) => el.setAttribute('data-reveal', ''));
+  reveal();
+  // Red de seguridad: lo que ya está en pantalla al cargar (p. ej. entrada por ancla)
+  setTimeout(() => {
+    document.querySelectorAll('[data-reveal]:not(.is-in)').forEach((el) => {
+      const r = el.getBoundingClientRect();
+      if (r.top < innerHeight && r.bottom > 0) el.classList.add('is-in');
+    });
+  }, 400);
+}
+
+// ---------- Terminal de la sección IA ----------
+const TERMINAL = {
+  es: [
+    { cmd: 'vim spec/inventario.md', comment: 'yo diseño: entidades, reglas y criterios' },
+    { cmd: 'agent run --spec spec/inventario.md', comment: 'el agente escribe lo repetitivo', out: ['✓ archivos generados siguiendo el contrato'] },
+    { cmd: 'git diff', comment: 'reviso cada cambio antes de aceptarlo' },
+    { cmd: 'mvn verify && docker compose up -d', comment: 'pruebo y despliego', out: ['✓ build ok · servicio arriba'] },
+  ],
+  en: [
+    { cmd: 'vim spec/inventory.md', comment: 'I design: entities, rules and criteria' },
+    { cmd: 'agent run --spec spec/inventory.md', comment: 'the agent writes the repetitive parts', out: ['✓ files generated following the contract'] },
+    { cmd: 'git diff', comment: 'I review every change before accepting it' },
+    { cmd: 'mvn verify && docker compose up -d', comment: 'test and deploy', out: ['✓ build ok · service up'] },
+  ],
 };
+
+// ---------- Inicio ----------
+safe('lang', initLang);
+safe('theme', initTheme);
+safe('header', initHeader);
+
+const lightbox = safe('lightbox', () => initLightbox()) || { open() {} };
+
+safe('hero', () => initHero({ stage: $('#sysStage'), svg: $('#sysLines'), caption: $('#sysCaption'), projects: PROJECTS, t, tx }));
+safe('cases', () => initCases({ root: $('#cases'), projects: FEATURED, t, tx, waLink, openLightbox: lightbox.open, onRender: (root) => reveal(root) }));
+safe('archive', () => initArchive({ list: $('#archiveList'), filters: $('#archiveFilters'), preview: $('#archivePreview'), projects: ARCHIVE, sectors: SECTORS, t, tx, openLightbox: lightbox.open }));
+safe('stack', () => initStack({ root: $('#stackGrid'), projects: PROJECTS, t, tx }));
+safe('terminal', () => initTerminal({ el: $('#aiTerm'), body: $('#aiTermBody'), getLines: () => TERMINAL[getLang()] }));
+safe('contact', () => initContact({ form: $('#contactForm'), status: $('#cfStatus'), copyBtn: $('#copyMail'), t }));
+safe('reveal', markReveal);
+document.addEventListener('langchange', () => reveal());
+
+const year = $('#year');
+if (year) year.textContent = String(new Date().getFullYear());

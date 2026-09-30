@@ -1,27 +1,15 @@
 {
-  "name": "Portfolio Jorge",
-  "short_name": "Jorge Dev",
-  "description": "Portfolio de Ingeniero de Software y Protocolos",
-  "start_url": "/",
+  "name": "Jorge Morales Nova · Desarrollador backend Java",
+  "short_name": "Jorge Morales",
+  "description": "Portafolio de Jorge de Jesús Morales Nova, desarrollador backend Java y cofundador de Skyonetec.",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#6366f1",
-  "orientation": "portrait-primary",
-  "icons": [
-    {
-      "src": "assets/images/logo.svg",
-      "sizes": "192x192",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "assets/images/logo.svg",
-      "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "any maskable"
-    }
-  ],
-  "categories": ["portfolio", "developer", "software"],
+  "background_color": "#0B0D12",
+  "theme_color": "#0B0D12",
   "lang": "es",
-  "dir": "ltr"
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
 }

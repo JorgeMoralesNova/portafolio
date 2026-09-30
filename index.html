@@ -1,483 +1,463 @@
 <!DOCTYPE html>
-<html class="no-js" lang="es" dir="ltr">
+<html lang="es" class="no-js" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.classList.remove('no-js');</script>
-  <meta name="description" content="Portfolio de Jorge de Jesús Morales Nova - Ingeniero de Sistemas | Desarrollador Full Stack">
-  <meta name="keywords" content="ingeniero de software, desarrollador web, full stack, javascript, python, php">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      var d = document.documentElement;
+      d.classList.remove('no-js');
+      try {
+        var t = localStorage.getItem('jm-theme');
+        if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t);
+        var l = localStorage.getItem('jm-lang');
+        if (l === 'en' || l === 'es') d.setAttribute('lang', l);
+      } catch (e) {}
+    })();
+  </script>
+
+  <title>Jorge Morales Nova · Desarrollador backend Java</title>
+  <meta name="description" content="Jorge de Jesús Morales Nova, desarrollador backend Java / Spring Boot y cofundador de Skyonetec. 18 sistemas construidos: gestión de emergencias, rastreo GPS en tiempo real, apps Android e IA.">
   <meta name="author" content="Jorge de Jesús Morales Nova">
-  <meta name="robots" content="index, follow">
-  
-  <meta property="og:title" content="Portfolio Jorge de Jesús Morales Nova">
-  <meta property="og:description" content="Ingeniero de Sistemas | Desarrollador Full Stack | 21 años | Creador de Soluciones">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://jorge-portfolio.netlify.app">
-  <meta property="og:image" content="assets/images/hero-bg.webp">
-  
+  <link rel="canonical" href="https://jorgemoralesnova.github.io/portafolio/">
+  <meta name="theme-color" content="#0B0D12">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jorge Morales Nova · Desarrollador backend Java">
+  <meta property="og:description" content="Cofundador y Líder de desarrollo en Skyonetec. 18 sistemas construidos con Java, Spring Boot, Android e IA.">
+  <meta property="og:url" content="https://jorgemoralesnova.github.io/portafolio/">
+  <meta property="og:image" content="https://jorgemoralesnova.github.io/portafolio/assets/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="es_CO">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Portfolio Jorge de Jesús Morales Nova">
-  <meta name="twitter:description" content="Ingeniero de Sistemas | Creador de Soluciones">
-  
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo.svg">
-  <link rel="apple-touch-icon" href="assets/images/logo.svg">
-  
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
   <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#0f172a">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/animations.css">
-  
-  <title>Jorge de Jesús Morales Nova - Ingeniero de Sistemas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jorge de Jesús Morales Nova",
+    "jobTitle": "Desarrollador backend Java · Cofundador y Líder de desarrollo",
+    "url": "https://jorgemoralesnova.github.io/portafolio/",
+    "image": "https://jorgemoralesnova.github.io/portafolio/assets/me/jorge-960.webp",
+    "email": "mailto:moralesnovajorgedejesus@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Barranquilla", "addressCountry": "CO" },
+    "worksFor": { "@type": "Organization", "name": "Skyonetec", "url": "https://skyonetec.com" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad de la Costa (CUC)" },
+    "knowsAbout": ["Java", "Spring Boot", "Spring Security", "MySQL", "Docker", "Kotlin", "Jetpack Compose", ".NET", "LLM", "Model Context Protocol"],
+    "sameAs": [
+      "https://github.com/JorgeMoralesNova",
+      "https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/",
+      "https://instagram.com/jorgemoralesnova"
+    ]
+  }
+  </script>
 </head>
 <body>
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-follower" id="cursor-follower"></div>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v13M6 12l6 6 6-6M5 21h14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 6.5L12 13l8.5-6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.46-2.39-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.18.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41-.08-.13-.28-.2-.57-.35zM12.05 21.79h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88zm8.41-18.3A11.82 11.82 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.68 1.45h.01c6.55 0 11.89-5.34 11.89-11.89 0-3.18-1.24-6.16-3.48-8.41z"/></symbol>
+    <symbol id="i-in" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-gh" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.82-.26.82-.57v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5L20 20M10.5 7.5v6M7.5 10.5h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </svg>
 
-  <div class="loader" id="loader">
-    <div class="loader-content">
-      <div class="loader-spinner"></div>
-      <p>Cargando...</p>
-    </div>
-  </div>
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
 
-  <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-    <span class="theme-toggle-icon">
-      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="5"></circle>
-        <line x1="12" y1="1" x2="12" y2="3"></line>
-        <line x1="12" y1="21" x2="12" y2="23"></line>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-        <line x1="1" y1="12" x2="3" y2="12"></line>
-        <line x1="21" y1="12" x2="23" y2="12"></line>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-      </svg>
-      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-      </svg>
-    </span>
-  </button>
-
-  <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar idioma">
-    <span class="lang-label">ES</span>
-  </button>
-
-  <header class="navbar" id="navbar">
-    <nav class="nav-container">
-      <a href="#" class="nav-logo">
-        <img src="assets/images/logo.svg" alt="Jorge Logo" width="40" height="40">
-        <span>Jorge de Jesús Morales Nova</span>
+  <!-- ================= Navegación ================= -->
+  <header class="site-header" id="siteHeader">
+    <nav class="nav-pill" aria-label="Principal">
+      <a class="brand" href="#inicio" aria-label="Jorge Morales Nova, inicio">
+        <span class="brand-mark" aria-hidden="true">JM</span>
+        <span class="brand-name">Jorge Morales</span>
       </a>
-      
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#inicio" class="nav-link active" data-i18n="inicio">Inicio</a></li>
-        <li><a href="#sobre-mi" class="nav-link" data-i18n="sobreMi">Sobre Mí</a></li>
-        <li><a href="#proyectos" class="nav-link" data-i18n="proyectos">Proyectos</a></li>
-        <li><a href="#tecnologias" class="nav-link" data-i18n="tecnologias">Tecnologías</a></li>
-        <li><a href="#contacto" class="nav-link" data-i18n="contacto">Contacto</a></li>
+
+      <ul class="nav-links">
+        <li><a href="#trabajo" data-spy="trabajo" data-i18n="nav.work">Trabajo</a></li>
+        <li><a href="#trayectoria" data-spy="trayectoria" data-i18n="nav.path">Trayectoria</a></li>
+        <li><a href="#stack" data-spy="stack">Stack</a></li>
+        <li><a href="#sobre-mi" data-spy="sobre-mi" data-i18n="nav.about">Sobre mí</a></li>
+        <li><a href="#contacto" data-spy="contacto" data-i18n="nav.contact">Contacto</a></li>
       </ul>
-      
-      <button class="nav-toggle" id="nav-toggle" aria-label="Menú">
-        <span class="hamburger"></span>
-      </button>
+
+      <div class="nav-tools">
+        <button class="icon-btn lang-btn" id="langToggle" type="button" data-i18n-attr="aria-label:a11y.lang">
+          <span class="lang-cur">ES</span>
+        </button>
+        <button class="icon-btn" id="themeToggle" type="button" data-i18n-attr="aria-label:a11y.theme">
+          <svg class="ic ic-sun"><use href="#i-sun"/></svg>
+          <svg class="ic ic-moon"><use href="#i-moon"/></svg>
+        </button>
+        <a class="btn btn-sm btn-primary nav-cv" href="cv/CV-Jorge-Morales-Nova.pdf" download="CV-Jorge-Morales-Nova.pdf" data-cv>
+          <svg class="ic"><use href="#i-down"/></svg><span data-i18n="cta.cvShort">CV</span>
+        </a>
+        <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileMenu" data-i18n-attr="aria-label:a11y.menu">
+          <svg class="ic ic-open"><use href="#i-menu"/></svg>
+          <svg class="ic ic-shut"><use href="#i-close"/></svg>
+        </button>
+      </div>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <ul>
+        <li><a href="#trabajo"><span class="mm-num">01</span><span data-i18n="nav.work">Trabajo</span></a></li>
+        <li><a href="#trayectoria"><span class="mm-num">03</span><span data-i18n="nav.path">Trayectoria</span></a></li>
+        <li><a href="#stack"><span class="mm-num">04</span><span>Stack</span></a></li>
+        <li><a href="#sobre-mi"><span class="mm-num">06</span><span data-i18n="nav.about">Sobre mí</span></a></li>
+        <li><a href="#contacto"><span class="mm-num">07</span><span data-i18n="nav.contact">Contacto</span></a></li>
+      </ul>
+      <a class="btn btn-primary btn-block" href="cv/CV-Jorge-Morales-Nova.pdf" download="CV-Jorge-Morales-Nova.pdf" data-cv>
+        <svg class="ic"><use href="#i-down"/></svg><span data-i18n="cta.cv">Descargar CV</span>
+      </a>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
+    <!-- ================= Hero ================= -->
     <section class="hero" id="inicio">
-      <div class="hero-bg">
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-gradient"></div>
-      </div>
-      
-      <div class="hero-content">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
         <div class="hero-text">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            <span data-i18n="disponible">Disponible para proyectos</span>
+          <div class="hero-author">
+            <img class="hero-avatar" src="assets/me/jorge-480.webp" alt="" width="48" height="60">
+            <div>
+              <p class="hero-hello" data-i18n="hero.hello">Hola, soy Jorge</p>
+              <p class="status"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.status">Abierto a oportunidades laborales</span></p>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            <span class="typing-text" id="typing-text"></span>
-            <span class="typing-cursor">|</span>
-          </h1>
+          <h1 class="hero-title">Jorge de Jesús<br><span class="hero-title-2">Morales Nova</span></h1>
 
-          <div class="hero-subtitle">
-            <span class="hero-tag" data-i18n="sobreMiTitulo">Ingeniero de Sistemas</span>
-            <span class="hero-divider">|</span>
-            <span class="hero-tag" data-i18n="iaAutomatizacion">IA & Automatización</span>
-            <span class="hero-divider">|</span>
-            <span class="hero-tag" data-i18n="21anos">21 años</span>
-          </div>
+          <p class="hero-role mono"><span class="accent">//</span> <span data-i18n="hero.role">Desarrollador backend Java · Cofundador de Skyonetec</span></p>
 
-          <p class="hero-description" data-i18n="heroDescripcion">
-            Experto combinando IA y programación. Desarrollo soluciones con Spring Boot,
-            automatizo flujos con LLMs (Claude, GPT) y creo chatbots inteligentes conectados
-            a CRM y plataformas educativas.
+          <p class="hero-lead" data-i18n="hero.lead">
+            Construyo software de gestión, rastreo GPS y automatización con IA que empresas reales
+            usan todos los días. Lidero el desarrollo en Skyonetec y busco sumarme a un equipo como
+            desarrollador backend Java.
           </p>
 
-          <div class="hero-buttons">
-            <a href="#proyectos" class="btn btn-primary">
-              <span data-i18n="verProyectos">Ver Proyectos</span>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M5 12h14M12 5l7 7-7 7"/>
-              </svg>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="cv/CV-Jorge-Morales-Nova.pdf" download="CV-Jorge-Morales-Nova.pdf" data-cv>
+              <svg class="ic"><use href="#i-down"/></svg><span data-i18n="cta.cv">Descargar CV</span>
             </a>
-            <a href="#contacto" class="btn btn-secondary" data-i18n="contactar">Contactar</a>
-          </div>
-
-          <div class="hero-scroll">
-            <span data-i18n="scroll">Scroll</span>
-            <div class="scroll-indicator">
-              <div class="scroll-dot"></div>
-            </div>
+            <a class="btn btn-secondary" href="#trabajo">
+              <span data-i18n="cta.work">Ver mi trabajo</span><svg class="ic"><use href="#i-arrow"/></svg>
+            </a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/" target="_blank" rel="noopener">
+              <svg class="ic"><use href="#i-in"/></svg><span>LinkedIn</span>
+            </a>
           </div>
         </div>
 
         <div class="hero-visual">
-          <div class="hero-image-container">
-            <div class="hero-image-border"></div>
-            <div class="hero-image">
-              <img src="assets/images/jorgemorales.jpeg" alt="Jorge de Jesús Morales Nova" loading="eager">
+          <div class="sys" id="sys">
+            <div class="sys-head mono">
+              <span class="sys-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span data-i18n="sys.title">arquitectura.típica</span>
+              <span class="sys-live"><span class="status-dot" aria-hidden="true"></span>live</span>
             </div>
+            <div class="sys-stage" id="sysStage">
+              <svg class="sys-lines" id="sysLines" aria-hidden="true"></svg>
+              <!-- Los nodos los posiciona CSS con --x / --y; hero.js dibuja las conexiones -->
+              <button class="sys-node" type="button" data-node="client" style="--x:24;--y:17;--mx:24;--my:12">
+                <span class="sys-k mono" data-i18n="sys.clientK">clientes</span><span class="sys-v" data-i18n="sys.client">Web · Android · Escritorio</span>
+              </button>
+              <button class="sys-node sys-core" type="button" data-node="api" style="--x:50;--y:50;--mx:50;--my:40">
+                <span class="sys-k mono">core</span><span class="sys-v">Spring Boot 3</span>
+              </button>
+              <button class="sys-node" type="button" data-node="ai" style="--x:78;--y:15;--mx:76;--my:12">
+                <span class="sys-k mono">ia</span><span class="sys-v">LLM · Claude / GPT</span>
+              </button>
+              <button class="sys-node" type="button" data-node="db" style="--x:21;--y:78;--mx:22;--my:70">
+                <span class="sys-k mono" data-i18n="sys.dbK">datos</span><span class="sys-v">MySQL · SQLite</span>
+              </button>
+              <button class="sys-node" type="button" data-node="iot" style="--x:79;--y:76;--mx:78;--my:70">
+                <span class="sys-k mono">iot</span><span class="sys-v">GPS · TCP (Netty)</span>
+              </button>
+              <button class="sys-node" type="button" data-node="docs" style="--x:50;--y:91;--mx:50;--my:91">
+                <span class="sys-k mono" data-i18n="sys.docsK">salidas</span><span class="sys-v">PDF · QR · Excel</span>
+              </button>
+            </div>
+            <p class="sys-caption" id="sysCaption" aria-live="polite">
+              <span class="mono accent">&gt;</span> <span data-i18n="sys.hint">Pasa el cursor o toca un nodo para ver qué proyectos lo usan.</span>
+            </p>
           </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="proof" aria-label="Datos clave">
+          <li><strong class="proof-n">18</strong><span data-i18n="proof.systems">sistemas diseñados y construidos</span></li>
+          <li><strong class="proof-n">2024</strong><span data-i18n="proof.prod">primeros sistemas en producción</span></li>
+          <li><strong class="proof-n">2020</strong><span data-i18n="proof.java">empecé a programar en Java</span></li>
+          <li><strong class="proof-n" data-i18n="proof.semN">9.º</strong><span data-i18n="proof.sem">semestre de Ingeniería de Sistemas</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= 01 Trabajo ================= -->
+    <section class="section" id="trabajo">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-num mono">01 <span>/</span> <span data-i18n="work.kicker">Trabajo seleccionado</span></p>
+          <h2 class="sec-title" data-i18n="work.title">Sistemas que diseñé y construí de punta a punta</h2>
+          <p class="sec-lead" data-i18n="work.lead">Cada proyecto: el problema, lo que construí, cómo está armado y qué cambió. El código es privado de los clientes; las demos, bajo solicitud.</p>
+        </header>
+        <div class="cases" id="cases"></div>
+      </div>
+    </section>
+
+    <!-- ================= 02 Archivo ================= -->
+    <section class="section section-alt" id="archivo">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-num mono">02 <span>/</span> <span data-i18n="arch.kicker">Más proyectos</span></p>
+          <h2 class="sec-title" data-i18n="arch.title">Archivo</h2>
+          <p class="sec-lead" data-i18n="arch.lead">Otros doce sistemas que construí, del ERP a la tienda en línea.</p>
+        </header>
+        <div class="filters" id="archiveFilters" role="toolbar" data-i18n-attr="aria-label:a11y.filters"></div>
+        <ul class="archive" id="archiveList"></ul>
+        <div class="archive-preview" id="archivePreview" aria-hidden="true"><img alt=""></div>
+      </div>
+    </section>
+
+    <!-- ================= 03 Trayectoria ================= -->
+    <section class="section" id="trayectoria">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-num mono">03 <span>/</span> <span data-i18n="path.kicker">Trayectoria</span></p>
+          <h2 class="sec-title" data-i18n="path.title">De la curiosidad a sistemas en producción</h2>
+        </header>
+        <ol class="timeline">
+          <li class="tl-item">
+            <span class="tl-year mono">2018</span>
+            <div class="tl-body">
+              <h3 data-i18n="path.t1">Primeras líneas en C++</h3>
+              <p data-i18n="path.d1">Aprendí lo básico por curiosidad: variables, ciclos y mis primeros programas de consola.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-year mono">2020</span>
+            <div class="tl-body">
+              <h3 data-i18n="path.t2">Java, por mi cuenta</h3>
+              <p data-i18n="path.d2">En la pandemia, con 15 años, aprendí Java de forma autodidacta y luego Spring Boot. Ahí empezó todo.</p>
+            </div>
+          </li>
+          <li class="tl-item">
+            <span class="tl-year mono" data-i18n="path.y3">Mayo 2024</span>
+            <div class="tl-body">
+              <h3 data-i18n="path.t3">Soporte de ERP en Matrix SQL</h3>
+              <p data-i18n="path.d3">De mayo a agosto atendí usuarios e incidencias de un ERP empresarial. Conocí de cerca cómo se usa el software en contabilidad, inventario y ventas, y decidí enfocarme en construirlo.</p>
+            </div>
+          </li>
+          <li class="tl-item tl-key">
+            <span class="tl-year mono">2024</span>
+            <div class="tl-body">
+              <h3 data-i18n="path.t4">Cofundo Skyonetec</h3>
+              <p data-i18n="path.d4">Como Líder de desarrollo diseño y construyo toda la línea de productos: web con Spring Boot, apps Android, escritorio en .NET e integraciones con IA.</p>
+            </div>
+          </li>
+          <li class="tl-item tl-now">
+            <span class="tl-year mono" data-i18n="path.now">Hoy</span>
+            <div class="tl-body">
+              <h3 data-i18n="path.t5">18 sistemas y 9.º semestre</h3>
+              <p data-i18n="path.d5">Termino Ingeniería de Sistemas en la Universidad de la Costa (CUC) y busco crecer dentro de un equipo de desarrollo.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ================= 04 Stack ================= -->
+    <section class="section section-alt" id="stack">
+      <div class="container">
+        <header class="sec-head">
+          <p class="sec-num mono">04 <span>/</span> Stack</p>
+          <h2 class="sec-title" data-i18n="stack.title">Herramientas, con evidencia</h2>
+          <p class="sec-lead" data-i18n="stack.lead">En lugar de porcentajes, cuántos de mis proyectos usan cada tecnología. Pasa el cursor para verlos.</p>
+        </header>
+        <div class="stack-grid" id="stackGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= 05 IA ================= -->
+    <section class="section" id="ia">
+      <div class="container ai-grid">
+        <header class="sec-head">
+          <p class="sec-num mono">05 <span>/</span> <span data-i18n="ai.kicker">Cómo trabajo con IA</span></p>
+          <h2 class="sec-title" data-i18n="ai.title">Yo diseño y reviso. La IA acelera.</h2>
+          <p class="sec-lead" data-i18n="ai.lead">Escribo especificaciones que funcionan como contrato, delego la escritura repetitiva a agentes de código y reviso cada cambio antes de desplegarlo.</p>
+        </header>
+
+        <div class="term" id="aiTerm" aria-label="Flujo de trabajo de ejemplo">
+          <div class="term-bar mono"><span class="sys-dots" aria-hidden="true"><i></i><i></i><i></i></span>~/skyonetec/inventario</div>
+          <pre class="term-body mono" id="aiTermBody"></pre>
+        </div>
+
+        <div class="ai-cards">
+          <article class="ai-card">
+            <p class="ai-card-k mono">01</p>
+            <h3 data-i18n="ai.c1t">Diseño primero</h3>
+            <p data-i18n="ai.c1d">Entidades, reglas de negocio y criterios de aceptación quedan escritos antes de la primera línea de código.</p>
+          </article>
+          <article class="ai-card">
+            <p class="ai-card-k mono">02</p>
+            <h3 data-i18n="ai.c2t">IA dentro del producto</h3>
+            <p data-i18n="ai.c2d">Chatbots conectados a plataformas, transcripción y resúmenes automáticos: Seven+, Chat Bot IA y SkyMeet.</p>
+          </article>
+          <article class="ai-card">
+            <p class="ai-card-k mono">03</p>
+            <h3 data-i18n="ai.c3t">MCP y agentes</h3>
+            <p data-i18n="ai.c3d">Conecto modelos de lenguaje con herramientas y datos mediante Model Context Protocol, y uso agentes de código en mi flujo diario.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="about" id="sobre-mi">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge" data-i18n="sobreMi">Sobre Mí</span>
-          <h2 class="section-title" data-i18n="conoceMiHistoria">Conoce mi historia</h2>
-          <p class="section-subtitle" data-i18n="sobreMiSubtitulo">Apasionado por crear soluciones con impacto real</p>
-        </div>
-        
-        <div class="about-content">
-          <div class="about-image reveal-left">
-            <div class="about-image-wrapper">
-              <div class="about-image-border-animated"></div>
-              <div class="about-image-main">
-                <img src="assets/images/jorgemorales.jpeg" alt="Foto de Jorge de Jesús" loading="lazy">
-              </div>
-              <div class="about-experience-badge">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="40" height="40">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-                <span class="badge-number">3+</span>
-                <span class="badge-text">Años de<br>Experiencia</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="about-info reveal-right">
-            <h3 class="about-title" data-i18n="sobreMiTitulo">Ingeniero de Sistemas & IA</h3>
-            <p class="about-text" data-i18n="sobreMiParrafo1">
-              Con 21 años, actualmente cursando 9no semestre de Ingeniería de Sistemas, he desarrollado más de 15 proyectos completos combinando
-              desarrollo backend con Spring Boot, automatización con IA y soluciones de 
-              vanguardia. Mi punto fuerte es Java/Spring Boot, pero domino igual de bien 
-              Python, JavaScript/TypeScript y Rust.
-            </p>
-            <p class="about-text" data-i18n="sobreMiParrafo2">
-              Experto combinando IA y programación. Manejo avanzado de LLMs (OpenAI, Claude), 
-              implementación de MCP (Model Context Protocol), y desarrollo de chatbots 
-              inteligentes conectados a CRM y plataformas educativas. Automatizo flujos de 
-              trabajo con herramientas de IA como Claude Code.
-            </p>
-            
-            <p class="about-philosophy" data-i18n="filosofia">
-              Creo que la tecnología debe simplificar la vida real. Por eso me especializo en 
-              automatizar procesos aburridos para que las personas puedan enfocarse en lo que 
-              realmente importa.
-            </p>
-            
-            <div class="about-stats">
-              <div class="stat-item">
-                <span class="stat-number" data-target="15">0</span>
-                <span class="stat-label" data-i18n="proyectosCompletados">Proyectos</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="12">0</span>
-                <span class="stat-label" data-i18n="clientesSatisfechos">Clientes</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="3">0</span>
-                <span class="stat-label" data-i18n="anosExperiencia">Años Exp.</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="15">0</span>
-                <span class="stat-label" data-i18n="tecnologiasDominadas">Tecnologías</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skills-section reveal">
-          <h3 class="skills-title" data-i18n="habilidades">Mis Habilidades</h3>
-          <div class="skills-grid">
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Java / Spring Boot (JPA, Security, REST)</span>
-                <span class="skill-level skill-level--avanzado" data-i18n="avanzado">Avanzado</span>
-              </div>
-              <p class="skill-project" data-i18n="skyT">Sky T, Master Bread, Orbital</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Python</span>
-                <span class="skill-level skill-level--intermedio" data-i18n="intermedio">Intermedio</span>
-              </div>
-              <p class="skill-project" data-i18n="automatizaciones">Automatizaciones, Chatbots IA</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">JavaScript / TypeScript</span>
-                <span class="skill-level skill-level--intermedio" data-i18n="intermedio">Intermedio</span>
-              </div>
-              <p class="skill-project" data-i18n="frontendProyectos">Frontend en proyectos varios</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Docker / Git / Despliegue Cloud</span>
-                <span class="skill-level skill-level--intermedio" data-i18n="intermedio">Intermedio</span>
-              </div>
-              <p class="skill-project" data-i18n="despleigueProyectos">Despliegue de proyectos en producción</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">MySQL</span>
-                <span class="skill-level skill-level--intermedio" data-i18n="intermedio">Intermedio</span>
-              </div>
-              <p class="skill-project" data-i18n="basesDatos">Bases de datos en proyectos reales</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Rust</span>
-                <span class="skill-level skill-level--aprendiendo" data-i18n="enAprendizaje">En aprendizaje</span>
-              </div>
-              <p class="skill-project" data-i18n="proyectosPersonales">Proyectos personales</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Svelte / Tauri</span>
-                <span class="skill-level skill-level--aprendiendo" data-i18n="enAprendizaje">En aprendizaje</span>
-              </div>
-              <p class="skill-project" data-i18n="explorandoFrameworks">Explorando frameworks</p>
-            </div>
-            <div class="skill-item">
-              <div class="skill-header">
-                <span class="skill-name">Astro</span>
-                <span class="skill-level skill-level--aprendiendo" data-i18n="enAprendizaje">En aprendizaje</span>
-              </div>
-              <p class="skill-project" data-i18n="explorandoFrameworks">Explorando frameworks</p>
-            </div>
-          </div>
+    <!-- ================= 06 Sobre mí ================= -->
+    <section class="section section-alt" id="sobre-mi">
+      <div class="container about-grid">
+        <figure class="about-photo">
+          <img src="assets/me/jorge-960.webp" srcset="assets/me/jorge-480.webp 480w, assets/me/jorge-960.webp 960w" sizes="(max-width: 899px) 80vw, 420px" alt="Jorge de Jesús Morales Nova" width="960" height="1200" loading="lazy">
+          <figcaption class="mono"><svg class="ic"><use href="#i-pin"/></svg>Barranquilla, Colombia</figcaption>
+        </figure>
+
+        <div class="about-text">
+          <header class="sec-head">
+            <p class="sec-num mono">06 <span>/</span> <span data-i18n="nav.about">Sobre mí</span></p>
+            <h2 class="sec-title" data-i18n="about.title">Me gusta entender el negocio antes de escribir código</h2>
+          </header>
+          <p data-i18n="about.p1">Soy de Barranquilla. Empecé a programar por curiosidad y en la pandemia aprendí Java por mi cuenta. Desde 2024 construyo con Skyonetec sistemas que usan empresas reales, mientras termino Ingeniería de Sistemas en la CUC.</p>
+          <p data-i18n="about.p2">Pasar por el soporte de un ERP me enseñó cómo se usa de verdad el software en el día a día de una empresa. Skyonetec es mi proyecto propio y lo sigo compaginando; ahora quiero además crecer dentro de un equipo: revisión de código, buenas prácticas y retos más grandes.</p>
+          <blockquote class="about-quote" data-i18n="about.quote">La tecnología debe simplificar la vida real. Por eso automatizo lo repetitivo, para que las personas se enfoquen en lo que importa.</blockquote>
+          <dl class="about-facts">
+            <div><dt class="mono" data-i18n="about.f1k">Idiomas</dt><dd data-i18n="about.f1v">Español nativo · Inglés A2, en progreso</dd></div>
+            <div><dt class="mono" data-i18n="about.f2k">Estudio</dt><dd data-i18n="about.f2v">Ingeniería de Sistemas · CUC · 9.º semestre</dd></div>
+            <div><dt class="mono" data-i18n="about.f3k">Aprendiendo</dt><dd>Rust · Svelte / Tauri · Astro</dd></div>
+          </dl>
         </div>
       </div>
     </section>
 
-    <section class="projects" id="proyectos">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge" data-i18n="proyectos">Proyectos</span>
-          <h2 class="section-title" data-i18n="trabajoDestacado">Trabajo Destacado</h2>
-          <p class="section-subtitle" data-i18n="solucionesConstruidas">Soluciones que he construido para clientes reales</p>
-        </div>
-        
-        <div class="projects-carousel reveal">
-          <div class="carousel-container">
-            <div class="carousel-track" id="projects-track"></div>
-          </div>
-          <div class="carousel-nav">
-            <button class="carousel-btn prev" id="projects-prev" aria-label="Anterior">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 18l-6-6 6-6"/>
-              </svg>
-            </button>
-            <div class="carousel-dots" id="projects-dots"></div>
-            <button class="carousel-btn next" id="projects-next" aria-label="Siguiente">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 18l6-6-6-6"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-        
-        <div class="projects-grid" id="projects-grid"></div>
-      </div>
-    </section>
+    <!-- ================= 07 Contacto ================= -->
+    <section class="section contact" id="contacto">
+      <div class="container contact-grid">
+        <div class="contact-intro">
+          <p class="sec-num mono">07 <span>/</span> <span data-i18n="nav.contact">Contacto</span></p>
+          <h2 class="contact-title" data-i18n="contact.title">¿Hablamos?</h2>
+          <p class="sec-lead" data-i18n="contact.lead">Estoy abierto a ofertas de empleo como desarrollador backend Java, en Barranquilla o remoto. También respondo propuestas de proyectos.</p>
 
-    <section class="technologies" id="tecnologias">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge" data-i18n="tecnologias">Tecnologías</span>
-          <h2 class="section-title" data-i18n="stackTecnologico">Stack Tecnológico</h2>
-          <p class="section-subtitle" data-i18n="herramientasDomino">Herramientas que domino para crear soluciones completas</p>
+          <ul class="contact-links">
+            <li class="contact-row">
+              <a href="mailto:moralesnovajorgedejesus@gmail.com">
+                <svg class="ic"><use href="#i-mail"/></svg>
+                <span><small class="mono">email</small>moralesnovajorgedejesus@gmail.com</span>
+              </a>
+              <button class="icon-btn copy-btn" type="button" id="copyMail" data-copy="moralesnovajorgedejesus@gmail.com" data-i18n-attr="aria-label:a11y.copy">
+                <svg class="ic ic-copy"><use href="#i-copy"/></svg><svg class="ic ic-ok"><use href="#i-check"/></svg>
+              </button>
+            </li>
+            <li class="contact-row">
+              <a href="https://wa.me/573105148847" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-wa"/></svg>
+                <span><small class="mono">whatsapp</small>+57 310 514 8847</span>
+              </a>
+            </li>
+            <li class="contact-row">
+              <a href="https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-in"/></svg>
+                <span><small class="mono">linkedin</small>Jorge de Jesús Morales Nova</span>
+              </a>
+            </li>
+            <li class="contact-row">
+              <a href="https://github.com/JorgeMoralesNova" target="_blank" rel="noopener">
+                <svg class="ic"><use href="#i-gh"/></svg>
+                <span><small class="mono">github</small>JorgeMoralesNova</span>
+              </a>
+            </li>
+          </ul>
+
+          <a class="btn btn-primary" href="cv/CV-Jorge-Morales-Nova.pdf" download="CV-Jorge-Morales-Nova.pdf" data-cv>
+            <svg class="ic"><use href="#i-down"/></svg><span data-i18n="cta.cv">Descargar CV</span>
+          </a>
         </div>
-        
-        <div class="tech-marquee reveal">
-          <div class="marquee">
-            <div class="marquee-content" id="tech-content"></div>
+
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mreovnnr" method="POST" novalidate>
+          <div class="field">
+            <label for="cfName" data-i18n="form.name">Nombre</label>
+            <input id="cfName" name="name" type="text" autocomplete="name" required>
           </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="contact" id="contacto">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-badge" data-i18n="contacto">Contacto</span>
-          <h2 class="section-title" data-i18n="hablemos">Hablemos</h2>
-          <p class="section-subtitle" data-i18n="tienesProyecto">¿Tienes un proyecto en mente? Contáctame</p>
-        </div>
-        
-        <div class="contact-content">
-          <div class="contact-info reveal-left">
-            <h3 data-i18n="conversemos">¡Conversemos!</h3>
-            <p data-i18n="innovadoras">
-              Estoy siempre abierto a nuevos proyectos, ideas innovadoras 
-              o simplemente para una buena conversación sobre tecnología.
-            </p>
-            
-            <div class="contact-links">
-              <a href="mailto:moralesnovajorgedejesus@gmail.com" class="contact-link">
-                <div class="contact-link-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                  </svg>
-                </div>
-                <div class="contact-link-text">
-                  <span class="contact-link-label">Email</span>
-                  <span class="contact-link-value">moralesnovajorgedejesus@gmail.com</span>
-                </div>
-              </a>
-              
-              <a href="https://wa.me/573105148847" class="contact-link" target="_blank" rel="noopener">
-                <div class="contact-link-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                  </svg>
-                </div>
-                <div class="contact-link-text">
-                  <span class="contact-link-label">WhatsApp</span>
-                  <span class="contact-link-value">+57 310 514 8847</span>
-                </div>
-              </a>
-              
-              <a href="https://github.com/JorgeMoralesNova" class="contact-link" target="_blank" rel="noopener">
-                <div class="contact-link-icon">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-                  </svg>
-                </div>
-                <div class="contact-link-text">
-                  <span class="contact-link-label">GitHub</span>
-                  <span class="contact-link-value">github.com/JorgeMoralesNova</span>
-                </div>
-              </a>
-              
-              <a href="https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/" class="contact-link" target="_blank" rel="noopener">
-                <div class="contact-link-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                    <rect x="2" y="9" width="4" height="12"/>
-                    <circle cx="4" cy="4" r="2"/>
-                  </svg>
-                </div>
-                <div class="contact-link-text">
-                  <span class="contact-link-label">LinkedIn</span>
-                  <span class="contact-link-value">Jorge de Jesús Morales Nova</span>
-                </div>
-              </a>
-
-              <a href="https://instagram.com/jorgemoralesnova" class="contact-link" target="_blank" rel="noopener">
-                <div class="contact-link-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-                  </svg>
-                </div>
-                <div class="contact-link-text">
-                  <span class="contact-link-label">Instagram</span>
-                  <span class="contact-link-value">@jorgemoralesnova</span>
-                </div>
-              </a>
-            </div>
+          <div class="field">
+            <label for="cfEmail" data-i18n="form.email">Correo</label>
+            <input id="cfEmail" name="email" type="email" autocomplete="email" required>
           </div>
-          
-          <div class="contact-form-wrapper reveal-right">
-            <form id="contact-form" name="contact-form" action="https://formspree.io/f/mreovnnr" method="POST">
-              <div class="form-group">
-                <input type="text" name="name" id="name" class="form-input" placeholder="Nombre" required>
-              </div>
-              <div class="form-group">
-                <input type="email" name="email" id="email" class="form-input" placeholder="Email" required>
-              </div>
-              <div class="form-group">
-                <textarea name="message" id="message" class="form-textarea" placeholder="Mensaje" required></textarea>
-              </div>
-              <button type="submit" class="form-submit">Enviar Mensaje</button>
-              <div id="form-status" class="form-status"></div>
-            </form>
+          <fieldset class="field field-chips">
+            <legend data-i18n="form.type">Motivo</legend>
+            <label class="chip-radio"><input type="radio" name="motivo" value="empleo" checked><span data-i18n="form.t1">Oferta de empleo</span></label>
+            <label class="chip-radio"><input type="radio" name="motivo" value="proyecto"><span data-i18n="form.t2">Proyecto</span></label>
+            <label class="chip-radio"><input type="radio" name="motivo" value="otro"><span data-i18n="form.t3">Otro</span></label>
+          </fieldset>
+          <div class="field">
+            <label for="cfMsg" data-i18n="form.msg">Mensaje</label>
+            <textarea id="cfMsg" name="message" rows="5" required></textarea>
           </div>
-        </div>
+          <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-primary btn-block" type="submit" id="cfSubmit">
+            <span data-i18n="form.send">Enviar mensaje</span><svg class="ic"><use href="#i-arrow"/></svg>
+          </button>
+          <p class="form-status" id="cfStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <a href="#" class="footer-logo">
-          <img src="assets/images/logo.svg" alt="Jorge Logo">
-          <span>Jorge de Jesús Morales Nova</span>
-        </a>
-        
-        <p class="footer-text">
-          © <span id="current-year"></span> Jorge. Todos los derechos reservados.
-        </p>
-        
-        <div class="footer-social">
-          <a href="https://github.com/JorgeMoralesNova" class="social-link" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/" class="social-link" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
-          </a>
-          <a href="https://instagram.com/jorgemoralesnova" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-          </a>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <p>© <span id="year">2026</span> Jorge de Jesús Morales Nova</p>
+      <p class="mono footer-made" data-i18n="footer.made">Hecho a mano con HTML, CSS y JavaScript, sin frameworks.</p>
+      <div class="footer-social">
+        <a class="icon-btn" href="https://github.com/JorgeMoralesNova" target="_blank" rel="noopener" aria-label="GitHub"><svg class="ic"><use href="#i-gh"/></svg></a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/morales-nova-jorge-de-jes%C3%BAs-a19a11273/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg class="ic"><use href="#i-in"/></svg></a>
+        <a class="icon-btn" href="https://instagram.com/jorgemoralesnova" target="_blank" rel="noopener" aria-label="Instagram"><svg class="ic"><use href="#i-ig"/></svg></a>
+        <a class="footer-sky mono" href="https://skyonetec.com" target="_blank" rel="noopener">skyonetec.com <svg class="ic"><use href="#i-ext"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <a href="#inicio" class="back-to-top" aria-label="Volver arriba">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="18 15 12 9 6 15"/>
-    </svg>
-  </a>
+  <!-- ================= Lightbox (uno solo, reutilizable) ================= -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lbCaption" hidden>
+    <button class="icon-btn lb-close" type="button" data-lb-close data-i18n-attr="aria-label:a11y.close"><svg class="ic"><use href="#i-close"/></svg></button>
+    <button class="icon-btn lb-nav lb-prev" type="button" data-lb-prev data-i18n-attr="aria-label:a11y.prev"><svg class="ic"><use href="#i-left"/></svg></button>
+    <figure class="lb-figure">
+      <img class="lb-img" id="lbImg" alt="">
+      <figcaption class="lb-caption" id="lbCaption"></figcaption>
+    </figure>
+    <button class="icon-btn lb-nav lb-next" type="button" data-lb-next data-i18n-attr="aria-label:a11y.next"><svg class="ic"><use href="#i-right"/></svg></button>
+  </div>
 
-  <script src="js/utils.js"></script>
-  <script src="js/carousels.js"></script>
-  <script src="js/main.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
